@@ -7,6 +7,6 @@
 
 import Foundation
 
-enum Body {
-    case Sedan, SUV, Compact, Wagon, Coupe, Van, Hatchback, Pickup
+enum Body: String {
+    case Sedan = "Седан", SUV = "Кроссовер", Coupe = "Купе", Van = "Фургон", Hatchback = "Хэтчбек", Pickup = "Пикап", none
 }
