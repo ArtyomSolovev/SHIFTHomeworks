@@ -8,67 +8,55 @@
 import Foundation
 
 var cars = [Car]()
-var x: Int?
+var option: Int?
 
-print("""
-1. Добавление нового автомобиля
-2. Вывод списка добавленных автомобилей
-3. Вывод списка автомобилей с использованием фильтра по типу кузова \n
-""")
-
-func getTypeOfBody(number:Int) -> Body{
-    switch Int(number) {
-    case 1:
-        return Body.Sedan
-    case 2:
-        return Body.SUV
-    case 3:
-        return Body.Coupe
-    case 4:
-        return Body.Van
-    case 5:
-        return Body.Hatchback
-    case 6:
-        return Body.Pickup
-    default:
-        return Body.none
-    }
+func run(){
+    repeat{
+        print("""
+        
+        1. Добавление нового автомобиля
+        2. Вывод списка добавленных автомобилей
+        3. Вывод списка автомобилей с использованием фильтра по типу кузова \n
+        """)
+        option = Int(readLine() ?? "0")
+        switch option {
+        case 1:
+            addAuto()
+        case 2:
+            showAuto()
+        case 3:
+            showAuto2()
+        default:
+            option = 0
+        }
+    } while(option != 0)
 }
 
-repeat{
-    x = Int(readLine() ?? "0")
-    switch x {
-    case 1:
-        print("Введите производтеля")
-        let manufacturer = readLine()
-        print("Введите модел")
-        let model = readLine()
-        print("Выберите тип кузова: 1)Седан 2)Кроссовер 3)Купе 4)Фургон 5)Хэтчбек 6)Пикап")
-        let body = getTypeOfBody(number: Int(readLine() ?? "1")!)
-        print("Введите год выпуска")
-        let yearOfIssue = Int(readLine() ?? "-")
-        print("Введите государственный номер")
-        let carNumber = readLine()
-        cars.append(Car(manufacturer: manufacturer!, model: model!, body: body, yearOfIssue: yearOfIssue, carNumber: carNumber))
-    case 2:
-        for car in cars {
-            print("\n Производитель:", car.manufacturer, "\n Модель:", car.model, "\n Тип кузова:", car.body.rawValue, "\n Год выпуска:", car.yearOfIssue ?? "-")
-            if let carNumber = car.carNumber {
-                print(" Государственный номер:", carNumber)
-            }
-        }
-    case 3:
-        print("Выберите машины с каким типом кузова хотите увидеть: 1)Седан 2)Кроссовер 3)Купе 4)Фургон 5)Хэтчбек 6)Пикап")
-        let body = getTypeOfBody(number: Int(readLine() ?? "1")!)
-        for car in cars {
-            if car.body == body{
-                print("\n Производитель:", car.manufacturer, "\n Модель:", car.model, "\n Год выпуска:", car.yearOfIssue ?? "-")
-                if let carNumber = car.carNumber {
-                    print(" Государственный номер:", carNumber)
-                }
-            }
-        }
-    default:
-        x = 0
+func addAuto() {
+    print("Введите производтеля")
+    let manufacturer = readLine()
+    print("Введите модел")
+    let model = readLine()
+    print("Выберите тип кузова: 1)Седан 2)Кроссовер 3)Купе 4)Фургон 5)Хэтчбек 6)Пикап")
+    let body = Body.Unknown.getTypeOfBody(number: Int(readLine() ?? "0") ?? 0)
+    print("Введите год выпуска")
+    let yearOfIssue = Int(readLine() ?? "-")
+    print("Введите государственный номер")
+    let carNumber = readLine()
+    cars.append(Car(manufacturer: manufacturer ?? "None", model: model ?? "None", body: body, yearOfIssue: yearOfIssue, carNumber: carNumber))
+}
+
+func showAuto(){
+    cars.forEach{print($0.description)}
+}
+
+func showAuto2(){
+    print("Выберите машины с каким типом кузова хотите увидеть:")
+    for (x , y) in Body.allCases.enumerated(){
+        print("\(x) - \(y.rawValue)")
     }
-} while(x != 0)
+    let body = Body.Unknown.getTypeOfBody(number: Int(readLine() ?? "0") ?? 0)
+    cars.filter { $0.body == body}.map{ $0.description}.forEach{print($0)}
+    
+}
+run()
