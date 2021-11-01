@@ -23,9 +23,9 @@ func run(){
         case 1:
             addAuto()
         case 2:
-            showAuto()
+            showAutos()
         case 3:
-            showAuto2()
+            showFilteredAutos()
         default:
             option = 0
         }
@@ -38,7 +38,7 @@ func addAuto() {
     print("Введите модел")
     let model = readLine()
     print("Выберите тип кузова: 1)Седан 2)Кроссовер 3)Купе 4)Фургон 5)Хэтчбек 6)Пикап")
-    let body = Body.Unknown.getTypeOfBody(number: Int(readLine() ?? "0") ?? 0)
+    let body = Body.getTypeOfBody(number: Int(readLine() ?? "0") ?? 0)
     print("Введите год выпуска")
     let yearOfIssue = Int(readLine() ?? "-")
     print("Введите государственный номер")
@@ -46,16 +46,16 @@ func addAuto() {
     cars.append(Car(manufacturer: manufacturer ?? "None", model: model ?? "None", body: body, yearOfIssue: yearOfIssue, carNumber: carNumber))
 }
 
-func showAuto(){
+func showAutos(){
     cars.forEach{print($0.description)}
 }
 
-func showAuto2(){
+func showFilteredAutos(){
     print("Выберите машины с каким типом кузова хотите увидеть:")
     for (x , y) in Body.allCases.enumerated(){
         print("\(x) - \(y.rawValue)")
     }
-    let body = Body.Unknown.getTypeOfBody(number: Int(readLine() ?? "0") ?? 0)
+    let body = Body.getTypeOfBody(number: Int(readLine() ?? "0") ?? 0)
     cars.filter { $0.body == body}.map{ $0.description}.forEach{print($0)}
     
 }

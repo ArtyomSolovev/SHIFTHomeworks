@@ -8,30 +8,30 @@
 import Foundation
 
 enum Body: String, CaseIterable {
-    case Unknown = "Некатегорированный"
-    case Sedan = "Седан"
-    case SUV = "Кроссовер"
-    case Coupe = "Купе"
-    case Van = "Фургон"
-    case Hatchback = "Хэтчбек"
-    case Pickup = "Пикап"
+    case unknown = "Некатегорированный"
+    case sedan = "Седан"
+    case suv = "Кроссовер"
+    case coupe = "Купе"
+    case van = "Фургон"
+    case hatchback = "Хэтчбек"
+    case pickup = "Пикап"
     
-    func getTypeOfBody(number:Int) -> Body{
+    static func getTypeOfBody(number:Int) -> Body{
         switch number {
         case 1:
-            return .Sedan
+            return .sedan
         case 2:
-            return .SUV
+            return .suv
         case 3:
-            return .Coupe
+            return .coupe
         case 4:
-            return .Van
+            return .van
         case 5:
-            return .Hatchback
+            return .hatchback
         case 6:
-            return .Pickup
+            return .pickup
         default:
-            return .Unknown
+            return .unknown
         }
     }
 }
