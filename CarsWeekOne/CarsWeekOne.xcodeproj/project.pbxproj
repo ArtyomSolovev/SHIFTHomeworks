@@ -12,6 +12,16 @@
 		AC636F9E272C80BF00D1D02B /* Body.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC636F9D272C80BF00D1D02B /* Body.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		AC22415F27368636005AADFF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AC22415B27368636005AADFF /* ThreadSafeArray.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AC22415127355E01005AADFF;
+			remoteInfo = ThreadSafeArray;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		AC636F8D272C7F0B00D1D02B /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -25,6 +35,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AC22415B27368636005AADFF /* ThreadSafeArray.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ThreadSafeArray.xcodeproj; path = ../ThreadSafeArray/ThreadSafeArray.xcodeproj; sourceTree = "<group>"; };
 		AC636F8F272C7F0B00D1D02B /* CarsWeekOne */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CarsWeekOne; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC636F92272C7F0B00D1D02B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		AC636F9B272C80A900D1D02B /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
@@ -42,9 +53,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC22415C27368636005AADFF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AC22416027368636005AADFF /* ThreadSafeArray */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		AC636F86272C7F0B00D1D02B = {
 			isa = PBXGroup;
 			children = (
+				AC22415B27368636005AADFF /* ThreadSafeArray.xcodeproj */,
 				AC636F91272C7F0B00D1D02B /* CarsWeekOne */,
 				AC636F90272C7F0B00D1D02B /* Products */,
 			);
@@ -114,12 +134,28 @@
 			mainGroup = AC636F86272C7F0B00D1D02B;
 			productRefGroup = AC636F90272C7F0B00D1D02B /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = AC22415C27368636005AADFF /* Products */;
+					ProjectRef = AC22415B27368636005AADFF /* ThreadSafeArray.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				AC636F8E272C7F0B00D1D02B /* CarsWeekOne */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		AC22416027368636005AADFF /* ThreadSafeArray */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = ThreadSafeArray;
+			remoteRef = AC22415F27368636005AADFF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AC636F8B272C7F0B00D1D02B /* Sources */ = {
