@@ -10,54 +10,61 @@ import Foundation
 struct ThreadSafeArray<T> {
     
     private var array = Array<T>()
-    private let queue = DispatchQueue(label: "SafeQueue", qos: .default, attributes: .concurrent)
     private let semaphore = DispatchSemaphore(value: 1)
     
-    init(){
-        array = Array()
-    }
-    init(_ addingArray: [T]){
+    init() {}
+    
+    init(_ addingArray: [T]) {
         array = addingArray
     }
     
     var isEmpty: Bool {
-        queue.sync {
-            array.isEmpty
-        }
-    }
-    var count: Int{
-        queue.sync {
-            array.count
-        }
+        semaphore.wait()
+        let isEmpty = array.isEmpty
+        semaphore.signal()
+        return isEmpty
     }
     
-    mutating func append(_ item: T){
+    var count: Int {
+        semaphore.wait()
+        let count = array.count
+        semaphore.signal()
+        return count
+    }
+    
+    mutating func append(_ item: T) {
         semaphore.wait()
         array.append(item)
         semaphore.signal()
     }
+    
     mutating func remove(at index: Int) {
         semaphore.wait()
-        if index < array.count{
+        if index < array.count {
             array.remove(at: index)
         }
         semaphore.signal()
     }
     
-    subscript (index: Int) -> T{
-        get{
-            queue.sync {
-                array[index]
-            }
+    subscript (index: Int) -> T {
+        get {
+            semaphore.wait()
+            let number = array[index]
+            semaphore.signal()
+            return number
         }
-        set{
-            queue.sync {
-                array[index] = newValue
-            }
+        set {
+            semaphore.wait()
+            array[index] = newValue
+            semaphore.signal()
         }
     }
+    
     func contains(_ element: T) -> Bool where T:Equatable {
-        return array.contains{ $0 == element}
+        semaphore.wait()
+        let contains = array.contains{ $0 == element}
+        semaphore.signal()
+        return contains
     }
     
 }

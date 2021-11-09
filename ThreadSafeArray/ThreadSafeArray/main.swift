@@ -9,22 +9,24 @@ import Foundation
 
 var safeArray = ThreadSafeArray<Int>()
 
-let queue = DispatchQueue(label: "No", attributes: .concurrent)
+let queue = DispatchQueue(label: "SafeQueue", attributes: .concurrent)
 let group = DispatchGroup()
 
-for number in 0...1000{
-    group.enter()
-    queue.async {
+queue.async {
+    
+    for number in 0...1000 {
+        group.enter()
         safeArray.append(number)
         group.leave()
     }
 }
-for number in 0...1000{
-    group.enter()
-    queue.async {
+queue.async {
+    for number in 0...1000 {
+        group.enter()
         safeArray.append(number)
         group.leave()
     }
 }
 group.wait()
+sleep(1)
 print("Result:",safeArray.count)
