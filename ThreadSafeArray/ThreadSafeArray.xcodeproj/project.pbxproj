@@ -7,23 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AC636F93272C7F0B00D1D02B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC636F92272C7F0B00D1D02B /* main.swift */; };
-		AC636F9C272C80A900D1D02B /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC636F9B272C80A900D1D02B /* Car.swift */; };
-		AC636F9E272C80BF00D1D02B /* Body.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC636F9D272C80BF00D1D02B /* Body.swift */; };
+		AC22415527355E01005AADFF /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC22415427355E01005AADFF /* main.swift */; };
+		AC3490842739588000AF5806 /* ThreadSafeArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3490832739588000AF5806 /* ThreadSafeArray.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		AC22415F27368636005AADFF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AC22415B27368636005AADFF /* ThreadSafeArray.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = AC22415127355E01005AADFF;
-			remoteInfo = ThreadSafeArray;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
-		AC636F8D272C7F0B00D1D02B /* CopyFiles */ = {
+		AC22414F27355E01005AADFF /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -35,15 +24,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		AC22415B27368636005AADFF /* ThreadSafeArray.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ThreadSafeArray.xcodeproj; path = ../ThreadSafeArray/ThreadSafeArray.xcodeproj; sourceTree = "<group>"; };
-		AC636F8F272C7F0B00D1D02B /* CarsWeekOne */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CarsWeekOne; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC636F92272C7F0B00D1D02B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		AC636F9B272C80A900D1D02B /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
-		AC636F9D272C80BF00D1D02B /* Body.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Body.swift; sourceTree = "<group>"; };
+		AC22415127355E01005AADFF /* ThreadSafeArray */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ThreadSafeArray; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC22415427355E01005AADFF /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		AC3490832739588000AF5806 /* ThreadSafeArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadSafeArray.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		AC636F8C272C7F0B00D1D02B /* Frameworks */ = {
+		AC22414E27355E01005AADFF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -53,77 +40,67 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AC22415C27368636005AADFF /* Products */ = {
+		AC22414827355E01005AADFF = {
 			isa = PBXGroup;
 			children = (
-				AC22416027368636005AADFF /* ThreadSafeArray */,
+				AC22415327355E01005AADFF /* ThreadSafeArray */,
+				AC22415227355E01005AADFF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AC22415227355E01005AADFF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AC22415127355E01005AADFF /* ThreadSafeArray */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AC636F86272C7F0B00D1D02B = {
+		AC22415327355E01005AADFF /* ThreadSafeArray */ = {
 			isa = PBXGroup;
 			children = (
-				AC22415B27368636005AADFF /* ThreadSafeArray.xcodeproj */,
-				AC636F91272C7F0B00D1D02B /* CarsWeekOne */,
-				AC636F90272C7F0B00D1D02B /* Products */,
+				AC22415427355E01005AADFF /* main.swift */,
+				AC3490832739588000AF5806 /* ThreadSafeArray.swift */,
 			);
-			sourceTree = "<group>";
-		};
-		AC636F90272C7F0B00D1D02B /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				AC636F8F272C7F0B00D1D02B /* CarsWeekOne */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		AC636F91272C7F0B00D1D02B /* CarsWeekOne */ = {
-			isa = PBXGroup;
-			children = (
-				AC636F92272C7F0B00D1D02B /* main.swift */,
-				AC636F9B272C80A900D1D02B /* Car.swift */,
-				AC636F9D272C80BF00D1D02B /* Body.swift */,
-			);
-			path = CarsWeekOne;
+			path = ThreadSafeArray;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AC636F8E272C7F0B00D1D02B /* CarsWeekOne */ = {
+		AC22415027355E01005AADFF /* ThreadSafeArray */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AC636F96272C7F0B00D1D02B /* Build configuration list for PBXNativeTarget "CarsWeekOne" */;
+			buildConfigurationList = AC22415827355E01005AADFF /* Build configuration list for PBXNativeTarget "ThreadSafeArray" */;
 			buildPhases = (
-				AC636F8B272C7F0B00D1D02B /* Sources */,
-				AC636F8C272C7F0B00D1D02B /* Frameworks */,
-				AC636F8D272C7F0B00D1D02B /* CopyFiles */,
+				AC22414D27355E01005AADFF /* Sources */,
+				AC22414E27355E01005AADFF /* Frameworks */,
+				AC22414F27355E01005AADFF /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = CarsWeekOne;
-			productName = CarsWeekOne;
-			productReference = AC636F8F272C7F0B00D1D02B /* CarsWeekOne */;
+			name = ThreadSafeArray;
+			productName = ThreadSafeArray;
+			productReference = AC22415127355E01005AADFF /* ThreadSafeArray */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		AC636F87272C7F0B00D1D02B /* Project object */ = {
+		AC22414927355E01005AADFF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1310;
 				LastUpgradeCheck = 1310;
 				TargetAttributes = {
-					AC636F8E272C7F0B00D1D02B = {
+					AC22415027355E01005AADFF = {
 						CreatedOnToolsVersion = 13.1;
 					};
 				};
 			};
-			buildConfigurationList = AC636F8A272C7F0B00D1D02B /* Build configuration list for PBXProject "CarsWeekOne" */;
+			buildConfigurationList = AC22414C27355E01005AADFF /* Build configuration list for PBXProject "ThreadSafeArray" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -131,47 +108,30 @@
 				en,
 				Base,
 			);
-			mainGroup = AC636F86272C7F0B00D1D02B;
-			productRefGroup = AC636F90272C7F0B00D1D02B /* Products */;
+			mainGroup = AC22414827355E01005AADFF;
+			productRefGroup = AC22415227355E01005AADFF /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = AC22415C27368636005AADFF /* Products */;
-					ProjectRef = AC22415B27368636005AADFF /* ThreadSafeArray.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
-				AC636F8E272C7F0B00D1D02B /* CarsWeekOne */,
+				AC22415027355E01005AADFF /* ThreadSafeArray */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXReferenceProxy section */
-		AC22416027368636005AADFF /* ThreadSafeArray */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = ThreadSafeArray;
-			remoteRef = AC22415F27368636005AADFF /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
-
 /* Begin PBXSourcesBuildPhase section */
-		AC636F8B272C7F0B00D1D02B /* Sources */ = {
+		AC22414D27355E01005AADFF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC636F9E272C80BF00D1D02B /* Body.swift in Sources */,
-				AC636F9C272C80A900D1D02B /* Car.swift in Sources */,
-				AC636F93272C7F0B00D1D02B /* main.swift in Sources */,
+				AC3490842739588000AF5806 /* ThreadSafeArray.swift in Sources */,
+				AC22415527355E01005AADFF /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		AC636F94272C7F0B00D1D02B /* Debug */ = {
+		AC22415627355E01005AADFF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -232,7 +192,7 @@
 			};
 			name = Debug;
 		};
-		AC636F95272C7F0B00D1D02B /* Release */ = {
+		AC22415727355E01005AADFF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -286,7 +246,7 @@
 			};
 			name = Release;
 		};
-		AC636F97272C7F0B00D1D02B /* Debug */ = {
+		AC22415927355E01005AADFF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -297,7 +257,7 @@
 			};
 			name = Debug;
 		};
-		AC636F98272C7F0B00D1D02B /* Release */ = {
+		AC22415A27355E01005AADFF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -311,25 +271,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AC636F8A272C7F0B00D1D02B /* Build configuration list for PBXProject "CarsWeekOne" */ = {
+		AC22414C27355E01005AADFF /* Build configuration list for PBXProject "ThreadSafeArray" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AC636F94272C7F0B00D1D02B /* Debug */,
-				AC636F95272C7F0B00D1D02B /* Release */,
+				AC22415627355E01005AADFF /* Debug */,
+				AC22415727355E01005AADFF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AC636F96272C7F0B00D1D02B /* Build configuration list for PBXNativeTarget "CarsWeekOne" */ = {
+		AC22415827355E01005AADFF /* Build configuration list for PBXNativeTarget "ThreadSafeArray" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AC636F97272C7F0B00D1D02B /* Debug */,
-				AC636F98272C7F0B00D1D02B /* Release */,
+				AC22415927355E01005AADFF /* Debug */,
+				AC22415A27355E01005AADFF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = AC636F87272C7F0B00D1D02B /* Project object */;
+	rootObject = AC22414927355E01005AADFF /* Project object */;
 }
