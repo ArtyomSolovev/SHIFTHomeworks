@@ -12,21 +12,19 @@ var safeArray = ThreadSafeArray<Int>()
 let queue = DispatchQueue(label: "SafeQueue", attributes: .concurrent)
 let group = DispatchGroup()
 
-queue.async {
-    
+group.enter()
+queue.async{
     for number in 0...1000 {
-        group.enter()
         safeArray.append(number)
-        group.leave()
     }
+    group.leave()
 }
+group.enter()
 queue.async {
     for number in 0...1000 {
-        group.enter()
         safeArray.append(number)
-        group.leave()
     }
+    group.leave()
 }
 group.wait()
-sleep(1)
 print("Result:",safeArray.count)
