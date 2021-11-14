@@ -36,16 +36,26 @@ final class ViewController: UIViewController {
         return label
     }()
     
+    private let fullInformationEnd : UILabel = {
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 1000, height: 1000))
+        label.text = Conatants.aboutMe.fullInformationEnd.rawValue
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         view.addSubview(imageView)
         view.addSubview(briefInformation)
         view.addSubview(fullInformationStart)
+        view.addSubview(fullInformationEnd)
         
         setupPhoto()
         setupBriefInfo()
         setupFullInformationStart()
+        setupFullInformationEnd()
     }
 
     func setupPhoto() {
@@ -72,6 +82,20 @@ final class ViewController: UIViewController {
             UIView.animate(withDuration: 1) {
                 self.fullInformationStart.transform = CGAffineTransform(translationX: self.width/10, y: 0)
                 self.fullInformationStart.alpha = 1
+            }
+        }
+    }
+    
+    func setupFullInformationEnd() {
+        fullInformationEnd.alpha = 0
+        fullInformationEnd.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: width/10).isActive = true
+        fullInformationEnd.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8).isActive = true
+        fullInformationEnd.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
+        fullInformationEnd.topAnchor.constraint(equalTo: fullInformationStart.bottomAnchor).isActive = true
+        DispatchQueue.main.async {
+            UIView.animate(withDuration: 1) {
+                self.fullInformationEnd.transform = CGAffineTransform(translationX: -self.width/10, y: 0)
+                self.fullInformationEnd.alpha = 1
             }
         }
     }
