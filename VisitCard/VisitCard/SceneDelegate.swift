@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
@@ -19,9 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             self.window = window
             self.window?.makeKeyAndVisible()
         }
-//        guard let _ = (scene as? UIWindowScene) else { return }
     }
-
 
 }
 

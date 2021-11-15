@@ -10,7 +10,6 @@ import UIKit
 final class SecondViewController: UIViewController {
     
     private let height = UIScreen.main.bounds.height
-    private var information: String?
     
     private lazy var buttonOne:  UIButton = {
         let view = UIButton()
@@ -51,7 +50,7 @@ final class SecondViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .cyan
+        view.backgroundColor = .white
         view.addSubview(buttonOne)
         view.addSubview(buttonTwo)
         view.addSubview(buttonThree)
@@ -63,42 +62,43 @@ final class SecondViewController: UIViewController {
         setupText()
     }
     
-    
-    func setupText() {
+    private func setupText() {
         text.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         text.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9).isActive = true
         text.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/2).isActive = true
         text.topAnchor.constraint(equalTo: view.topAnchor , constant: height/10).isActive = true
     }
     
-    func setupButtonOne() {
+    private func setupButtonOne() {
         buttonOne.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         buttonOne.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9).isActive = true
         buttonOne.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/4).isActive = true
         buttonOne.topAnchor.constraint(equalTo: text.bottomAnchor, constant: height/50).isActive = true
     }
 
-    func setupButtonTwo() {
+    private func setupButtonTwo() {
         buttonTwo.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         buttonTwo.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9).isActive = true
         buttonTwo.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/4).isActive = true
         buttonTwo.topAnchor.constraint(equalTo: buttonOne.bottomAnchor, constant: height/50).isActive = true
     }
     
-    func setupButtonThree() {
+    private func setupButtonThree() {
         buttonThree.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         buttonThree.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9).isActive = true
         buttonThree.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/4).isActive = true
         buttonThree.topAnchor.constraint(equalTo: buttonTwo.bottomAnchor, constant: height/50).isActive = true
     }
     
-    @objc func buttonActionOne(sender: UIButton!) {
+    @objc private func buttonActionOne(sender: UIButton!) {
         text.text = Conatants.skills.experience.rawValue
     }
-    @objc func buttonActionTwo(sender: UIButton!) {
+    
+    @objc private func buttonActionTwo(sender: UIButton!) {
         text.text = Conatants.skills.language.rawValue
     }
-    @objc func buttonActionThree(sender: UIButton!) {
+    
+    @objc private func buttonActionThree(sender: UIButton!) {
         text.text = Conatants.skills.expectations.rawValue
     }
     

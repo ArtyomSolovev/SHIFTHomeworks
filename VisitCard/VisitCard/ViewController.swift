@@ -58,21 +58,21 @@ final class ViewController: UIViewController {
         setupFullInformationEnd()
     }
 
-    func setupPhoto() {
+    private func setupPhoto() {
         imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         imageView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/3).isActive = true
         imageView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/3).isActive = true
         imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: height/9).isActive = true
     }
 
-    func setupBriefInfo() {
+    private func setupBriefInfo() {
         briefInformation.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         briefInformation.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9).isActive = true
         briefInformation.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.1).isActive = true
         briefInformation.topAnchor.constraint(equalTo: imageView.bottomAnchor).isActive = true
     }
     
-    func setupFullInformationStart() {
+    private func setupFullInformationStart() {
         fullInformationStart.alpha = 0
         fullInformationStart.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -width/10).isActive = true
         fullInformationStart.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8).isActive = true
@@ -86,7 +86,7 @@ final class ViewController: UIViewController {
         }
     }
     
-    func setupFullInformationEnd() {
+    private func setupFullInformationEnd() {
         fullInformationEnd.alpha = 0
         fullInformationEnd.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: width/10).isActive = true
         fullInformationEnd.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8).isActive = true
