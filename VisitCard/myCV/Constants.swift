@@ -5,12 +5,10 @@
 //  Created by Артем Соловьев on 12.11.2021.
 //
 
-import Foundation
-
-enum Conatants {
-    enum aboutMe : String{
+enum Constants {
+    enum AboutMe : String{
         case photo = "myPhoto"
-        case briefInformation = "Соловеьв Артем, 22 года"
+        case briefInformation = "Соловьев Артем, 22 года"
         case fullInformationStart = """
         Образование: Студент 5 курса
         Университет: ПГУПС
@@ -23,7 +21,7 @@ enum Conatants {
         
         """
     }
-    enum skills : String{
+    enum Skills : String{
         case welcome = "Выберете раздел, который вас интересует"
         case experience = """
         Изучаю swift пол года.
@@ -38,7 +36,7 @@ enum Conatants {
         Начать заниматься Swift на профессиональном уровне
         """
     }
-    enum hobby : String{
+    enum Hobby : String{
         case car = """
         До получения прав автомобили меня не интересовали абсолютно, а сейчас я планирую записаться на трек
         """

@@ -41,7 +41,7 @@ final class SecondViewController: UIViewController {
     
     private let text : UILabel = {
         let label = UILabel()
-        label.text = Conatants.skills.welcome.rawValue
+        label.text = Constants.Skills.welcome.rawValue
         label.textAlignment = .center
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -90,16 +90,16 @@ final class SecondViewController: UIViewController {
         buttonThree.topAnchor.constraint(equalTo: buttonTwo.bottomAnchor, constant: height/50).isActive = true
     }
     
-    @objc private func buttonActionOne(sender: UIButton!) {
-        text.text = Conatants.skills.experience.rawValue
+    @objc private func buttonActionOne(sender: UIButton) {
+        text.text = Constants.Skills.experience.rawValue
     }
     
-    @objc private func buttonActionTwo(sender: UIButton!) {
-        text.text = Conatants.skills.language.rawValue
+    @objc private func buttonActionTwo(sender: UIButton) {
+        text.text = Constants.Skills.language.rawValue
     }
     
-    @objc private func buttonActionThree(sender: UIButton!) {
-        text.text = Conatants.skills.expectations.rawValue
+    @objc private func buttonActionThree(sender: UIButton) {
+        text.text = Constants.Skills.expectations.rawValue
     }
     
 }

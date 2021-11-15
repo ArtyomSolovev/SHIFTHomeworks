@@ -13,7 +13,7 @@ final class ViewController: UIViewController {
     private let width = UIScreen.main.bounds.width
 
     private let imageView : UIImageView = {
-        let image = UIImageView(image: UIImage(named: Conatants.aboutMe.photo.rawValue))
+        let image = UIImageView(image: UIImage(named: Constants.AboutMe.photo.rawValue))
         image.layer.cornerRadius = 50
         image.clipsToBounds = true
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -22,7 +22,7 @@ final class ViewController: UIViewController {
     
     private let briefInformation : UILabel = {
         let label = UILabel()
-        label.text = Conatants.aboutMe.briefInformation.rawValue
+        label.text = Constants.AboutMe.briefInformation.rawValue
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -30,7 +30,7 @@ final class ViewController: UIViewController {
     
     private let fullInformationStart : UILabel = {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 1000, height: 1000))
-        label.text = Conatants.aboutMe.fullInformationStart.rawValue
+        label.text = Constants.AboutMe.fullInformationStart.rawValue
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -38,7 +38,7 @@ final class ViewController: UIViewController {
     
     private let fullInformationEnd : UILabel = {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 1000, height: 1000))
-        label.text = Conatants.aboutMe.fullInformationEnd.rawValue
+        label.text = Constants.AboutMe.fullInformationEnd.rawValue
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label

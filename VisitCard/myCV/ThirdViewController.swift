@@ -47,7 +47,7 @@ final class ThirdViewController: UIViewController {
     private let text : UILabel = {
         let label = UILabel()
         label.alpha = 0
-        label.text = Conatants.hobby.car.rawValue
+        label.text = Constants.Hobby.car.rawValue
         label.textAlignment = .center
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -57,7 +57,7 @@ final class ThirdViewController: UIViewController {
     private let textTwo : UILabel = {
         let label = UILabel()
         label.alpha = 0
-        label.text = Conatants.hobby.sport.rawValue
+        label.text = Constants.Hobby.sport.rawValue
         label.textAlignment = .center
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -67,7 +67,7 @@ final class ThirdViewController: UIViewController {
     private let textThree : UILabel = {
         let label = UILabel()
         label.alpha = 0
-        label.text = Conatants.hobby.games.rawValue
+        label.text = Constants.Hobby.games.rawValue
         label.textAlignment = .center
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -132,7 +132,7 @@ final class ThirdViewController: UIViewController {
         textThree.topAnchor.constraint(equalTo: buttonThree.topAnchor).isActive = true
     }
     
-    @objc private func buttonActionOne(sender: UIButton!) {
+    @objc private func buttonActionOne(sender: UIButton) {
         if switchOne == false {
             UIView.animate(withDuration: 1, animations:  {
                 self.buttonOne.transform = CGAffineTransform(translationX: 0, y: self.height/6)
@@ -148,7 +148,7 @@ final class ThirdViewController: UIViewController {
         switchOne.toggle()
     }
     
-    @objc func buttonActionTwo(sender: UIButton!) {
+    @objc func buttonActionTwo(sender: UIButton) {
         if switchTwo == false {
             UIView.animate(withDuration: 1, animations:  {
                 self.buttonTwo.transform = CGAffineTransform(translationX: 0, y: self.height/6)
@@ -164,7 +164,7 @@ final class ThirdViewController: UIViewController {
         switchTwo.toggle()
     }
     
-    @objc func buttonActionThree(sender: UIButton!) {
+    @objc func buttonActionThree(sender: UIButton) {
         if switchThree == false {
             UIView.animate(withDuration: 1, animations:  {
                 self.buttonThree.transform = CGAffineTransform(translationX: 0, y: self.height/6)

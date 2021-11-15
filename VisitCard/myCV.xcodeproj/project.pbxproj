@@ -18,7 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AC322A3A273EA9C8003DCA39 /* VisitCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisitCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC322A3A273EA9C8003DCA39 /* myCV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myCV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC322A3D273EA9C8003DCA39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC322A3F273EA9C8003DCA39 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		AC322A41273EA9C8003DCA39 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -44,7 +44,7 @@
 		AC322A31273EA9C8003DCA39 = {
 			isa = PBXGroup;
 			children = (
-				AC322A3C273EA9C8003DCA39 /* VisitCard */,
+				AC322A3C273EA9C8003DCA39 /* myCV */,
 				AC322A3B273EA9C8003DCA39 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -52,12 +52,12 @@
 		AC322A3B273EA9C8003DCA39 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AC322A3A273EA9C8003DCA39 /* VisitCard.app */,
+				AC322A3A273EA9C8003DCA39 /* myCV.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AC322A3C273EA9C8003DCA39 /* VisitCard */ = {
+		AC322A3C273EA9C8003DCA39 /* myCV */ = {
 			isa = PBXGroup;
 			children = (
 				AC322A3D273EA9C8003DCA39 /* AppDelegate.swift */,
@@ -70,15 +70,15 @@
 				AC322A48273EA9C9003DCA39 /* LaunchScreen.storyboard */,
 				AC322A4B273EA9C9003DCA39 /* Info.plist */,
 			);
-			path = VisitCard;
+			path = myCV;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AC322A39273EA9C8003DCA39 /* VisitCard */ = {
+		AC322A39273EA9C8003DCA39 /* myCV */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AC322A4E273EA9C9003DCA39 /* Build configuration list for PBXNativeTarget "VisitCard" */;
+			buildConfigurationList = AC322A4E273EA9C9003DCA39 /* Build configuration list for PBXNativeTarget "myCV" */;
 			buildPhases = (
 				AC322A36273EA9C8003DCA39 /* Sources */,
 				AC322A37273EA9C8003DCA39 /* Frameworks */,
@@ -88,9 +88,9 @@
 			);
 			dependencies = (
 			);
-			name = VisitCard;
+			name = myCV;
 			productName = VisitCard;
-			productReference = AC322A3A273EA9C8003DCA39 /* VisitCard.app */;
+			productReference = AC322A3A273EA9C8003DCA39 /* myCV.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -108,7 +108,7 @@
 					};
 				};
 			};
-			buildConfigurationList = AC322A35273EA9C8003DCA39 /* Build configuration list for PBXProject "VisitCard" */;
+			buildConfigurationList = AC322A35273EA9C8003DCA39 /* Build configuration list for PBXProject "myCV" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -121,7 +121,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AC322A39273EA9C8003DCA39 /* VisitCard */,
+				AC322A39273EA9C8003DCA39 /* myCV */,
 			);
 		};
 /* End PBXProject section */
@@ -291,7 +291,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RWNR5M53QM;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = VisitCard/Info.plist;
+				INFOPLIST_FILE = myCV/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
@@ -320,7 +320,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RWNR5M53QM;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = VisitCard/Info.plist;
+				INFOPLIST_FILE = myCV/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
@@ -343,7 +343,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AC322A35273EA9C8003DCA39 /* Build configuration list for PBXProject "VisitCard" */ = {
+		AC322A35273EA9C8003DCA39 /* Build configuration list for PBXProject "myCV" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AC322A4C273EA9C9003DCA39 /* Debug */,
@@ -352,7 +352,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AC322A4E273EA9C9003DCA39 /* Build configuration list for PBXNativeTarget "VisitCard" */ = {
+		AC322A4E273EA9C9003DCA39 /* Build configuration list for PBXNativeTarget "myCV" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AC322A4F273EA9C9003DCA39 /* Debug */,
