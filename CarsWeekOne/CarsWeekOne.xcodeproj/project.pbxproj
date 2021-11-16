@@ -27,6 +27,13 @@
 			remoteGlobalIDString = AC322A3A273EA9C8003DCA39;
 			remoteInfo = VisitCard;
 		};
+		ACB60F412743907000AEF324 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ACB60F3D2743906C00AEF324 /* myCV.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AC322A3A273EA9C8003DCA39;
+			remoteInfo = myCV;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -48,6 +55,7 @@
 		AC636F92272C7F0B00D1D02B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		AC636F9B272C80A900D1D02B /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		AC636F9D272C80BF00D1D02B /* Body.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Body.swift; sourceTree = "<group>"; };
+		ACB60F3D2743906C00AEF324 /* myCV.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = myCV.xcodeproj; path = ../myCV/myCV.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +88,7 @@
 		AC636F86272C7F0B00D1D02B = {
 			isa = PBXGroup;
 			children = (
+				ACB60F3D2743906C00AEF324 /* myCV.xcodeproj */,
 				AC322A51273EA9DD003DCA39 /* VisitCard.xcodeproj */,
 				AC22415B27368636005AADFF /* ThreadSafeArray.xcodeproj */,
 				AC636F91272C7F0B00D1D02B /* CarsWeekOne */,
@@ -103,6 +112,14 @@
 				AC636F9D272C80BF00D1D02B /* Body.swift */,
 			);
 			path = CarsWeekOne;
+			sourceTree = "<group>";
+		};
+		ACB60F3E2743906C00AEF324 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ACB60F422743907000AEF324 /* myCV.app */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,6 +170,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = ACB60F3E2743906C00AEF324 /* Products */;
+					ProjectRef = ACB60F3D2743906C00AEF324 /* myCV.xcodeproj */;
+				},
+				{
 					ProductGroup = AC22415C27368636005AADFF /* Products */;
 					ProjectRef = AC22415B27368636005AADFF /* ThreadSafeArray.xcodeproj */;
 				},
@@ -181,6 +202,13 @@
 			fileType = wrapper.application;
 			path = VisitCard.app;
 			remoteRef = AC322A56273EA9DD003DCA39 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		ACB60F422743907000AEF324 /* myCV.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = myCV.app;
+			remoteRef = ACB60F412743907000AEF324 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
