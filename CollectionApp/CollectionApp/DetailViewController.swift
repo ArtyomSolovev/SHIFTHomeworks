@@ -21,28 +21,30 @@ class DetailViewController: UIViewController {
         return image
     }()
     
-    private let briefInformation : UILabel = {
+    private let typeOfAnimal : UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    private var fullInformationStart : UIButton = {
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 1000, height: 1000))
+    private var getPosition : UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .black
+        button.layer.cornerRadius = 25
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         return button
     }()
     
-    @objc func buttonAction(sender: UIButton!) {
+    @objc func buttonAction(sender: UIButton) {
         let VC = MapViewController()
         VC.place = self.title
         VC.coordinates = coordinates
         self.present(VC, animated: true, completion: nil)
     }
     
-    private let fullInformationEnd : UILabel = {
+    private let information : UILabel = {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 1000, height: 1000))
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -55,9 +57,9 @@ class DetailViewController: UIViewController {
             self.title = animal.name
             view.backgroundColor = animal.color
             imageView.image = UIImage(named: animal.name)
-            briefInformation.text = animal.type.rawValue
-            fullInformationStart.setTitle(animal.place, for: .normal)
-            fullInformationEnd.text = animal.description
+            typeOfAnimal.text = animal.type.rawValue
+            getPosition.setTitle(animal.place, for: .normal)
+            information.text = animal.description
             coordinates = animal.coordinates
         }
     }
@@ -65,14 +67,14 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(imageView)
-        view.addSubview(briefInformation)
-        view.addSubview(fullInformationStart)
-        view.addSubview(fullInformationEnd)
+        view.addSubview(typeOfAnimal)
+        view.addSubview(getPosition)
+        view.addSubview(information)
         
         setupPhoto()
-        setupBriefInfo()
-        setupFullInformationStart()
-        setupFullInformationEnd()
+        setupTypeOfAnimal()
+        setupGetPosition()
+        setupInformation()
     }
     
     private func setupPhoto() {
@@ -82,32 +84,25 @@ class DetailViewController: UIViewController {
         imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: height/9).isActive = true
     }
 
-    private func setupBriefInfo() {
-        briefInformation.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        briefInformation.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9).isActive = true
-        briefInformation.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.1).isActive = true
-        briefInformation.topAnchor.constraint(equalTo: imageView.bottomAnchor).isActive = true
+    private func setupTypeOfAnimal() {
+        typeOfAnimal.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        typeOfAnimal.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9).isActive = true
+        typeOfAnimal.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.1).isActive = true
+        typeOfAnimal.topAnchor.constraint(equalTo: imageView.bottomAnchor).isActive = true
     }
     
-    private func setupFullInformationStart() {
-        fullInformationStart.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -width/10).isActive = true
-        fullInformationStart.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8).isActive = true
-        fullInformationStart.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
-        fullInformationStart.topAnchor.constraint(equalTo: briefInformation.bottomAnchor).isActive = true
+    private func setupGetPosition() {
+        getPosition.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        getPosition.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8).isActive = true
+        getPosition.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.1).isActive = true
+        getPosition.topAnchor.constraint(equalTo: typeOfAnimal.bottomAnchor).isActive = true
     }
     
-    private func setupFullInformationEnd() {
-        fullInformationEnd.alpha = 0
-        fullInformationEnd.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: width/10).isActive = true
-        fullInformationEnd.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8).isActive = true
-        fullInformationEnd.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
-        fullInformationEnd.topAnchor.constraint(equalTo: fullInformationStart.bottomAnchor).isActive = true
-        DispatchQueue.main.async {
-            UIView.animate(withDuration: 1) {
-                self.fullInformationEnd.transform = CGAffineTransform(translationX: -self.width/10, y: 0)
-                self.fullInformationEnd.alpha = 1
-            }
-        }
+    private func setupInformation() {
+        information.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        information.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8).isActive = true
+        information.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
+        information.topAnchor.constraint(equalTo: getPosition.bottomAnchor).isActive = true
     }
     
     
