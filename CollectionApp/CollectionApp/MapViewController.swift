@@ -10,11 +10,12 @@ import MapKit
 
 final class MapViewController: UIViewController {
     
-    private let animal = Animal(name: nil, description: nil, place: nil, coordinates: nil, type: nil)
+    var place: String? = nil
+    var coordinates: (Double, Double)? = nil
     
     override func viewDidLoad() {
-        let mapView = MKMapView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height))
-        let location = CLLocationCoordinate2DMake(animal.coordinates?.0 ?? 0 , animal.coordinates?.1 ?? 0)
+        let mapView = MKMapView(frame: CGRect(x: 0, y: 10, width: view.frame.size.width, height: view.frame.size.height))
+        let location = CLLocationCoordinate2DMake(coordinates?.0 ?? 0, coordinates?.1 ?? 0)
         let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
         let region = MKCoordinateRegion(center: location, span: span)
         
@@ -22,7 +23,7 @@ final class MapViewController: UIViewController {
         
         let annotaion = MKPointAnnotation()
         annotaion.coordinate = location
-        annotaion.title = animal.place
+        annotaion.title = place
         mapView.addAnnotation(annotaion)
         
         mapView.mapType = MKMapType.standard
