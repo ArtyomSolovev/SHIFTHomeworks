@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC37C00D2748CF1900178A6A /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC37C00C2748CF1900178A6A /* TableViewController.swift */; };
+		AC37C00F2748D19400178A6A /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC37C00E2748D19400178A6A /* TableViewCell.swift */; };
 		ACF988D827467FE600E27813 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF988D727467FE600E27813 /* AppDelegate.swift */; };
 		ACF988DA27467FE600E27813 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF988D927467FE600E27813 /* SceneDelegate.swift */; };
 		ACF988DC27467FE600E27813 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF988DB27467FE600E27813 /* ViewController.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC37C00C2748CF1900178A6A /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		AC37C00E2748D19400178A6A /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		ACF988D427467FE600E27813 /* CollectionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACF988D727467FE600E27813 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACF988D927467FE600E27813 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +47,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC37C0092748CE6B00178A6A /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				AC37C00C2748CF1900178A6A /* TableViewController.swift */,
+				AC37C00E2748D19400178A6A /* TableViewCell.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
 		ACF988CB27467FE600E27813 = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +75,7 @@
 		ACF988D627467FE600E27813 /* CollectionApp */ = {
 			isa = PBXGroup;
 			children = (
+				AC37C0092748CE6B00178A6A /* TableView */,
 				ACF988D727467FE600E27813 /* AppDelegate.swift */,
 				ACF988D927467FE600E27813 /* SceneDelegate.swift */,
 				ACF988DB27467FE600E27813 /* ViewController.swift */,
@@ -149,6 +163,8 @@
 				ACF988DC27467FE600E27813 /* ViewController.swift in Sources */,
 				ACF988EC2746872300E27813 /* Animals.swift in Sources */,
 				ACF988F22746B8EB00E27813 /* CollectionViewCell.swift in Sources */,
+				AC37C00F2748D19400178A6A /* TableViewCell.swift in Sources */,
+				AC37C00D2748CF1900178A6A /* TableViewController.swift in Sources */,
 				ACF988D827467FE600E27813 /* AppDelegate.swift in Sources */,
 				ACF988F02746B39A00E27813 /* MapViewController.swift in Sources */,
 				ACF988DA27467FE600E27813 /* SceneDelegate.swift in Sources */,
