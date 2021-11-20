@@ -14,6 +14,16 @@ final class MapViewController: UIViewController {
     var coordinates: (Double, Double)? = nil
     
     override func viewDidLoad() {
+        
+        let action = UIAction(handler: { [weak self] _ in
+            self?.dismiss(animated: true)
+        })
+
+        let closeButton = UIButton(type: .system, primaryAction: action)
+        closeButton.setImage(.init(systemName: "xmark"), for: .normal)
+        closeButton.tintColor = .label
+        closeButton.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        
         let mapView = MKMapView(frame: CGRect(x: 0, y: 10, width: view.frame.size.width, height: view.frame.size.height))
         let location = CLLocationCoordinate2DMake(coordinates?.0 ?? 0, coordinates?.1 ?? 0)
         let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
@@ -31,5 +41,6 @@ final class MapViewController: UIViewController {
         mapView.isScrollEnabled = true
         
         view.addSubview(mapView)
+        view.addSubview(closeButton)
     }
 }

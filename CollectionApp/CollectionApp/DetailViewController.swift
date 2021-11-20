@@ -7,11 +7,13 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+final class DetailViewController: UIViewController {
     
-    private let height = UIScreen.main.bounds.height
-    private let width = UIScreen.main.bounds.width
+    private let heightOfScreen = UIScreen.main.bounds.height
+    private let widthOfScreen = UIScreen.main.bounds.width
     private var coordinates: (Double, Double)?
+    private var constantsInPortret = [NSLayoutConstraint]()
+    private var constantsInLandscape = [NSLayoutConstraint]()
 
     private let imageView : UIImageView = {
         let image = UIImageView()
@@ -45,7 +47,7 @@ class DetailViewController: UIViewController {
     }
     
     private let information : UILabel = {
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 1000, height: 1000))
+        let label = UILabel()
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -75,35 +77,83 @@ class DetailViewController: UIViewController {
         setupTypeOfAnimal()
         setupGetPosition()
         setupInformation()
+        
+        setupPhoto2()
+        setupTypeOfAnimal2()
+        setupGetPosition2()
+        setupInformation2()
+        if UIDevice.current.orientation.isLandscape {
+            constantsInLandscape.forEach({$0.isActive = true})
+        }else{
+            constantsInPortret.forEach({$0.isActive = true})
+        }
+    }
+    
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        if UIDevice.current.orientation.isLandscape {
+            print("landscape")
+            constantsInPortret.forEach({$0.isActive = false})
+            constantsInLandscape.forEach({$0.isActive = true})
+        } else {
+            print("portret")
+            constantsInPortret.forEach({$0.isActive = true})
+            constantsInLandscape.forEach({$0.isActive = false})
+        }
     }
     
     private func setupPhoto() {
-        imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        imageView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/3).isActive = true
-        imageView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/3).isActive = true
-        imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: height/9).isActive = true
+        constantsInPortret.append(imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor))
+        constantsInPortret.append(imageView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/3))
+        constantsInPortret.append(imageView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/3))
+        constantsInPortret.append(imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: heightOfScreen/9))
     }
 
     private func setupTypeOfAnimal() {
-        typeOfAnimal.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        typeOfAnimal.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9).isActive = true
-        typeOfAnimal.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.1).isActive = true
-        typeOfAnimal.topAnchor.constraint(equalTo: imageView.bottomAnchor).isActive = true
+        constantsInPortret.append(typeOfAnimal.centerXAnchor.constraint(equalTo: view.centerXAnchor))
+        constantsInPortret.append(typeOfAnimal.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9))
+        constantsInPortret.append(typeOfAnimal.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.1))
+        constantsInPortret.append(typeOfAnimal.topAnchor.constraint(equalTo: imageView.bottomAnchor))
     }
     
     private func setupGetPosition() {
-        getPosition.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        getPosition.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8).isActive = true
-        getPosition.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.1).isActive = true
-        getPosition.topAnchor.constraint(equalTo: typeOfAnimal.bottomAnchor).isActive = true
+        constantsInPortret.append(getPosition.centerXAnchor.constraint(equalTo: view.centerXAnchor))
+        constantsInPortret.append(getPosition.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8))
+        constantsInPortret.append(getPosition.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.1))
+        constantsInPortret.append(getPosition.topAnchor.constraint(equalTo: typeOfAnimal.bottomAnchor))
     }
     
     private func setupInformation() {
-        information.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        information.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8).isActive = true
-        information.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
-        information.topAnchor.constraint(equalTo: getPosition.bottomAnchor).isActive = true
+        constantsInPortret.append(information.centerXAnchor.constraint(equalTo: view.centerXAnchor))
+        constantsInPortret.append(information.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8))
+        constantsInPortret.append(information.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5))
+        constantsInPortret.append(information.topAnchor.constraint(equalTo: getPosition.bottomAnchor))
     }
     
+    private func setupPhoto2() {
+        constantsInLandscape.append(contentsOf: [imageView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: widthOfScreen/10),
+        imageView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/6),
+        imageView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/6),
+        imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: heightOfScreen/9)])
+    }
     
+    private func setupTypeOfAnimal2() {
+        constantsInLandscape.append(contentsOf: [typeOfAnimal.leftAnchor.constraint(equalTo: view.leftAnchor, constant: widthOfScreen/10),
+        typeOfAnimal.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/6),
+        typeOfAnimal.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.1),
+        typeOfAnimal.topAnchor.constraint(equalTo: imageView.bottomAnchor)])
+    }
+    
+    private func setupGetPosition2() {
+        constantsInLandscape.append(contentsOf: [getPosition.leftAnchor.constraint(equalTo: view.leftAnchor, constant: widthOfScreen/10),
+        getPosition.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
+        getPosition.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.1),
+        getPosition.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant:  -heightOfScreen/20)])
+    }
+    
+    private func setupInformation2() {
+        constantsInLandscape.append(contentsOf: [information.leftAnchor.constraint(equalTo: imageView.rightAnchor, constant: widthOfScreen/10),
+        information.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5),
+        information.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.3),
+        information.topAnchor.constraint(equalTo: view.topAnchor, constant: heightOfScreen/20)])
+    }
 }

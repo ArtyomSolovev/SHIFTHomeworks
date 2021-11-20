@@ -9,7 +9,7 @@ import UIKit
 
 final class ViewController: UIViewController {
     
-    private lazy var collectionView: UICollectionView = {
+    private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 10, left: 5, bottom: 10, right: 5)
         layout.itemSize = CGSize(width: UIScreen.main.bounds.width/2-10, height: UIScreen.main.bounds.height/12)
@@ -18,27 +18,28 @@ final class ViewController: UIViewController {
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         view.alwaysBounceVertical = true
         view.register(CollectionViewCell.self, forCellWithReuseIdentifier: CollectionViewCell.id)
-        view.delegate = self
-        view.dataSource = self
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    private var animals = Animal.data
+    private let animals = Animal.data
     
     override func loadView() {
         view = collectionView
+        collectionView.delegate = self
+        collectionView.dataSource = self
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
 }
 
 extension ViewController: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let VC = DetailViewController()
-        VC.animal = animals[indexPath.item]
-        self.navigationController?.pushViewController(VC, animated: true)
+        let vc = DetailViewController()
+        vc.animal = animals[indexPath.item]
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
