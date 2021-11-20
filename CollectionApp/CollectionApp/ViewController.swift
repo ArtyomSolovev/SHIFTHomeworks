@@ -37,7 +37,7 @@ final class ViewController: UIViewController {
 extension ViewController: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let VC = DetailViewController()
-        VC.animal = animals[indexPath.item]
+//        VC.animal = animals[indexPath.item]
         self.navigationController?.pushViewController(VC, animated: true)
     }
 }
@@ -49,7 +49,7 @@ extension ViewController: UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.id, for: indexPath) as! CollectionViewCell
-        cell.animal = animals[indexPath.item]
+//        cell.animal = animals[indexPath.item]
         return cell
         
     }
