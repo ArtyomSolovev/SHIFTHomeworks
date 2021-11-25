@@ -43,6 +43,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ACD5E88C2750119D00574544 /* MVC */ = {
+			isa = PBXGroup;
+			children = (
+				ACF988DB27467FE600E27813 /* ViewController.swift */,
+				ACF988F12746B8EB00E27813 /* CollectionViewCell.swift */,
+			);
+			path = MVC;
+			sourceTree = "<group>";
+		};
+		ACD5E88D2750125800574544 /* MVP */ = {
+			isa = PBXGroup;
+			children = (
+				ACF988F32746BB4000E27813 /* DetailViewController.swift */,
+			);
+			path = MVP;
+			sourceTree = "<group>";
+		};
+		ACD5E88E2750127B00574544 /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				ACF988EF2746B39A00E27813 /* MapViewController.swift */,
+			);
+			path = MVVM;
+			sourceTree = "<group>";
+		};
 		ACF988CB27467FE600E27813 = {
 			isa = PBXGroup;
 			children = (
@@ -64,11 +89,10 @@
 			children = (
 				ACF988D727467FE600E27813 /* AppDelegate.swift */,
 				ACF988D927467FE600E27813 /* SceneDelegate.swift */,
-				ACF988DB27467FE600E27813 /* ViewController.swift */,
-				ACF988F32746BB4000E27813 /* DetailViewController.swift */,
-				ACF988F12746B8EB00E27813 /* CollectionViewCell.swift */,
+				ACD5E88C2750119D00574544 /* MVC */,
+				ACD5E88D2750125800574544 /* MVP */,
+				ACD5E88E2750127B00574544 /* MVVM */,
 				ACF988EB2746872300E27813 /* Animals.swift */,
-				ACF988EF2746B39A00E27813 /* MapViewController.swift */,
 				ACF988E027467FE600E27813 /* Assets.xcassets */,
 				ACF988E227467FE600E27813 /* LaunchScreen.storyboard */,
 				ACF988E527467FE600E27813 /* Info.plist */,
