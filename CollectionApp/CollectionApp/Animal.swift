@@ -15,6 +15,7 @@ struct Animal {
     let coordinates: (Double, Double)
     let type: TypeOfAnimal
     let color: UIColor
+    
 }
 
 extension Animal {

@@ -10,37 +10,37 @@ import MapKit
 
 final class MapViewController: UIViewController {
     
-    var place: String? = nil
-    var coordinates: (Double, Double)? = nil
+    private var viewMap: MapView?
+    private var viewModel = MapViewModel()
+    var animal: Animal?
+    
+    init(){
+        self.viewMap = MapView(frame: UIScreen.main.bounds)
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func loadView() {
+        super.loadView()
+        self.viewMap?.loadView(controller: self)
+        self.viewMap?.setupParametrs(place: animal?.name ?? "", coordinates: animal?.coordinates ?? (0,0))
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.viewMap?.configure()
+        if let viewMap = viewMap{
+        self.view.addSubview(viewMap)
+        }
+    }
     
     override func viewDidLoad() {
-        
-        let action = UIAction(handler: { [weak self] _ in
-            self?.dismiss(animated: true)
-        })
-
-        let closeButton = UIButton(type: .system, primaryAction: action)
-        closeButton.setImage(.init(systemName: "xmark"), for: .normal)
-        closeButton.tintColor = .label
-        closeButton.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-        
-        let mapView = MKMapView(frame: CGRect(x: 0, y: 10, width: view.frame.size.width, height: view.frame.size.height))
-        let location = CLLocationCoordinate2DMake(coordinates?.0 ?? 0, coordinates?.1 ?? 0)
-        let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
-        let region = MKCoordinateRegion(center: location, span: span)
-        
-        mapView.setRegion(region, animated: true)
-        
-        let annotaion = MKPointAnnotation()
-        annotaion.coordinate = location
-        annotaion.title = place
-        mapView.addAnnotation(annotaion)
-        
-        mapView.mapType = MKMapType.standard
-        mapView.isZoomEnabled = true
-        mapView.isScrollEnabled = true
-        
-        view.addSubview(mapView)
-        view.addSubview(closeButton)
+        self.viewModel.data.setNotify { [weak self] place, coordinates
+            in
+            self?.viewMap?.setupParametrs(place: place, coordinates: coordinates)
+            self?.viewMap?.configure()
+        }
     }
 }

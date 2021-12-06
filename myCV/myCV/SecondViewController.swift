@@ -20,6 +20,7 @@ final class SecondViewController: UIViewController {
         view.addTarget(self, action: #selector(buttonActionOne), for: .touchUpInside)
         return view
     }()
+    
     private lazy var buttonTwo:  UIButton = {
         let view = UIButton()
         view.backgroundColor = .green
@@ -29,6 +30,7 @@ final class SecondViewController: UIViewController {
         view.addTarget(self, action: #selector(buttonActionTwo), for: .touchUpInside)
         return view
     }()
+    
     private lazy var buttonThree:  UIButton = {
         let view = UIButton()
         view.backgroundColor = .red
