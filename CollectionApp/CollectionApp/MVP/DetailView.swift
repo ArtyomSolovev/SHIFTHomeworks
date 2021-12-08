@@ -68,15 +68,15 @@ final class DetailView: UIView {
         self.addSubview(getPosition)
         self.addSubview(information)
         
-        setupPhoto()
-        setupTypeOfAnimal()
-        setupGetPosition()
-        setupInformation()
+        self.setupPhoto()
+        self.setupTypeOfAnimal()
+        self.setupGetPosition()
+        self.setupInformation()
         
-        setupPhoto2()
-        setupTypeOfAnimal2()
-        setupGetPosition2()
-        setupInformation2()
+        self.setupPhoto2()
+        self.setupTypeOfAnimal2()
+        self.setupGetPosition2()
+        self.setupInformation2()
         if UIDevice.current.orientation.isLandscape {
             constantsInLandscape.forEach({$0.isActive = true})
         }else{

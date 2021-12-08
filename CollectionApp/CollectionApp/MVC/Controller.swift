@@ -25,7 +25,7 @@ final class Controller: UIViewController {
     
     override func loadView() {
         super.loadView()
-        customView?.load(controller: self)
+        self.customView?.load(controller: self)
     }
     
     override func viewDidLoad() {
@@ -42,14 +42,17 @@ final class Controller: UIViewController {
         customView?.collectionView.delegate = self
         customView?.collectionView.dataSource = self
     }
+    private func newController(indexPath: IndexPath) {
+        let vc = DetailViewController()
+        vc.animal = animals[indexPath.item]
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 
 extension Controller: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = DetailViewController()
-        vc.animal = animals[indexPath.item]
-        self.navigationController?.pushViewController(vc, animated: true)
+        newController(indexPath: indexPath)
     }
 }
 
@@ -61,7 +64,7 @@ extension Controller: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.id, for: indexPath) as! CollectionViewCell
-        cell.animal = animals[indexPath.item]
+        cell.setAnimal(animal: animals[indexPath.item]) 
         return cell
         
     }
