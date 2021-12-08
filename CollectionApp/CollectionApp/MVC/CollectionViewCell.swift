@@ -33,14 +33,11 @@ final class CollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    var animal: Animal? {
-        didSet {
-            guard let animal = animal else { return }
-            self.imageView.image = UIImage(named: animal.name)
-            self.nameLabel.text = animal.name
-            self.placeLabel.text = animal.place
-            backgroundColor = animal.color
-        }
+    func setAnimal(animal: Animal){
+        self.imageView.image = UIImage(named: animal.name)
+        self.nameLabel.text = animal.name
+        self.placeLabel.text = animal.place
+        backgroundColor = animal.color
     }
     
     override var isHighlighted: Bool {

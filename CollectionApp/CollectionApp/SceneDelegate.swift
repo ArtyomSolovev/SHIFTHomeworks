@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: windowScene)
         let navigation = UINavigationController()
-        navigation.viewControllers = [ViewController()]
+        navigation.viewControllers = [Controller()]
         window.rootViewController = navigation
         window.makeKeyAndVisible()
         self.window = window
