@@ -7,15 +7,39 @@
 
 import Foundation
 
-class ChoosePresenter {
-    
-    private let model = ChooseModel()
+protocol IChoosePresenter{
+    func loadView(controller: ChooseViewController, view: IChooseView)
+}
+
+final class ChoosePresenter {
+    private let model: IChooseModel
+    private let router: IChooseRouter
     private weak var controller: ChooseViewController?
-    private weak var view: ChooseView?
+    private weak var view: IChooseView?
     
-    func loadView(controller: ChooseViewController, view: ChooseView) {
+    init(model: IChooseModel, router: IChooseRouter) {
+        self.model = model
+        self.router = router as! ChooseRouter
+    }
+    
+    private func setHandlers(){
+        view?.getNumberOfRowsHandler = { [weak self] in
+            (self?.model.getData().count) ?? 0
+        }
+        view?.getContentForCellHandler = { [weak self] index in
+            (self?.model.getData()[index])!
+        }
+        view?.onTouchedHandler = { [weak self] index in
+            self?.router.pushDetailVC(with: index)
+        }
+    }
+    
+}
+
+extension ChoosePresenter: IChoosePresenter {
+    func loadView(controller: ChooseViewController, view: IChooseView) {
         self.controller = controller
         self.view = view
-        self.view?.setPresenter(presenter: self)
+        self.setHandlers()
     }
 }

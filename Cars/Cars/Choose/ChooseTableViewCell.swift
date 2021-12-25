@@ -7,7 +7,11 @@
 
 import UIKit
 
-class ChooseTableViewCell: UITableViewCell {
+protocol IChooseTableViewCell: UITableViewCell {
+    func setCar(car: Car)
+}
+
+final class ChooseTableViewCell: UITableViewCell {
     
     static let identifier = "ChooseTableViewCell"
 
@@ -21,7 +25,7 @@ class ChooseTableViewCell: UITableViewCell {
         return image
     }()
     
-    private let header : UILabel = {
+    private let name : UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
@@ -30,17 +34,17 @@ class ChooseTableViewCell: UITableViewCell {
     
     private let article : UILabel = {
         let label = UILabel()
+        label.text = "Выбрать"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
         return label
     }()
     
-    var post: Car? {
+    var car: Car? {
         didSet {
-            guard let person = post else { return }
-            self.image.image = UIImage(named: person.image)
-            self.header.text = person.title
-            self.article.text = person.article
+            guard let person = car else { return }
+            self.image.image = UIImage(named: person.image + "1")
+            self.name.text = person.title
         }
     }
     
@@ -57,7 +61,7 @@ class ChooseTableViewCell: UITableViewCell {
 
     private func initialSetup() {
         self.addSubview(image)
-        self.addSubview(header)
+        self.addSubview(name)
         self.addSubview(article)
     }
 
@@ -71,11 +75,17 @@ class ChooseTableViewCell: UITableViewCell {
         self.image.widthAnchor.constraint(equalToConstant: 50).isActive = true
         self.image.heightAnchor.constraint(equalToConstant: 50).isActive = true
         self.image.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        self.header.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 82).isActive = true
-        self.header.topAnchor.constraint(equalTo: self.topAnchor, constant: 16).isActive = true
-        self.article.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 82).isActive = true
+        self.name.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 82).isActive = true
+        self.name.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         self.article.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -24).isActive = true
-        self.article.topAnchor.constraint(equalTo: header.bottomAnchor, constant: 8).isActive = true
-        self.article.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16).isActive = true
+        self.article.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
     }
+}
+
+extension ChooseTableViewCell: IChooseTableViewCell{
+    
+    func setCar(car: Car) {
+        self.car = car
+    }
+    
 }

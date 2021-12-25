@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC2BE083276617DF00AA1B01 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2BE082276617DF00AA1B01 /* DetailTableViewCell.swift */; };
+		AC2BE0852766287C00AA1B01 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2BE0842766287C00AA1B01 /* Extension.swift */; };
+		AC577B2B276F3255005C572A /* ChooseAsembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC577B2A276F3255005C572A /* ChooseAsembly.swift */; };
+		AC5C24CB27776F440040F685 /* ChooseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5C24CA27776F440040F685 /* ChooseRouter.swift */; };
 		AC8CCF27276395D900E425BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8CCF26276395D900E425BC /* AppDelegate.swift */; };
 		AC8CCF29276395D900E425BC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8CCF28276395D900E425BC /* SceneDelegate.swift */; };
 		AC8CCF2B276395D900E425BC /* ChooseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8CCF2A276395D900E425BC /* ChooseViewController.swift */; };
@@ -20,9 +24,14 @@
 		AC8CCF472763B2B400E425BC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8CCF462763B2B400E425BC /* DetailViewController.swift */; };
 		AC8CCF492763B2CC00E425BC /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8CCF482763B2CC00E425BC /* DetailView.swift */; };
 		AC8CCF4B2763B33D00E425BC /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8CCF4A2763B33D00E425BC /* DetailModel.swift */; };
+		AC8CCF4D2763C23F00E425BC /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8CCF4C2763C23F00E425BC /* DetailPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC2BE082276617DF00AA1B01 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
+		AC2BE0842766287C00AA1B01 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		AC577B2A276F3255005C572A /* ChooseAsembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAsembly.swift; sourceTree = "<group>"; };
+		AC5C24CA27776F440040F685 /* ChooseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseRouter.swift; sourceTree = "<group>"; };
 		AC8CCF23276395D900E425BC /* Cars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC8CCF26276395D900E425BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC8CCF28276395D900E425BC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +47,7 @@
 		AC8CCF462763B2B400E425BC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		AC8CCF482763B2CC00E425BC /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		AC8CCF4A2763B33D00E425BC /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
+		AC8CCF4C2763C23F00E425BC /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +88,7 @@
 				AC8CCF2F276395DA00E425BC /* Assets.xcassets */,
 				AC8CCF31276395DA00E425BC /* LaunchScreen.storyboard */,
 				AC8CCF34276395DA00E425BC /* Info.plist */,
+				AC2BE0842766287C00AA1B01 /* Extension.swift */,
 			);
 			path = Cars;
 			sourceTree = "<group>";
@@ -85,10 +96,12 @@
 		AC8CCF3A2763972700E425BC /* Choose */ = {
 			isa = PBXGroup;
 			children = (
+				AC577B2A276F3255005C572A /* ChooseAsembly.swift */,
+				AC5C24CA27776F440040F685 /* ChooseRouter.swift */,
+				AC8CCF402763A56600E425BC /* ChoosePresenter.swift */,
 				AC8CCF2A276395D900E425BC /* ChooseViewController.swift */,
 				AC8CCF422763A58900E425BC /* ChooseModel.swift */,
 				AC8CCF3C27639ABC00E425BC /* ChooseView.swift */,
-				AC8CCF402763A56600E425BC /* ChoosePresenter.swift */,
 				AC8CCF3E2763A31000E425BC /* ChooseTableViewCell.swift */,
 			);
 			path = Choose;
@@ -98,8 +111,10 @@
 			isa = PBXGroup;
 			children = (
 				AC8CCF462763B2B400E425BC /* DetailViewController.swift */,
-				AC8CCF482763B2CC00E425BC /* DetailView.swift */,
 				AC8CCF4A2763B33D00E425BC /* DetailModel.swift */,
+				AC8CCF482763B2CC00E425BC /* DetailView.swift */,
+				AC8CCF4C2763C23F00E425BC /* DetailPresenter.swift */,
+				AC2BE082276617DF00AA1B01 /* DetailTableViewCell.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -176,15 +191,20 @@
 			files = (
 				AC8CCF472763B2B400E425BC /* DetailViewController.swift in Sources */,
 				AC8CCF2B276395D900E425BC /* ChooseViewController.swift in Sources */,
+				AC577B2B276F3255005C572A /* ChooseAsembly.swift in Sources */,
 				AC8CCF27276395D900E425BC /* AppDelegate.swift in Sources */,
+				AC2BE083276617DF00AA1B01 /* DetailTableViewCell.swift in Sources */,
 				AC8CCF492763B2CC00E425BC /* DetailView.swift in Sources */,
 				AC8CCF29276395D900E425BC /* SceneDelegate.swift in Sources */,
 				AC8CCF412763A56600E425BC /* ChoosePresenter.swift in Sources */,
 				AC8CCF432763A58900E425BC /* ChooseModel.swift in Sources */,
 				AC8CCF452763A72900E425BC /* Car.swift in Sources */,
+				AC2BE0852766287C00AA1B01 /* Extension.swift in Sources */,
 				AC8CCF3F2763A31000E425BC /* ChooseTableViewCell.swift in Sources */,
 				AC8CCF4B2763B33D00E425BC /* DetailModel.swift in Sources */,
 				AC8CCF3D27639ABC00E425BC /* ChooseView.swift in Sources */,
+				AC8CCF4D2763C23F00E425BC /* DetailPresenter.swift in Sources */,
+				AC5C24CB27776F440040F685 /* ChooseRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

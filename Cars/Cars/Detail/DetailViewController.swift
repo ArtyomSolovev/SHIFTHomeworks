@@ -9,12 +9,12 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
-    private var postView: DetailView?
-    private var postModel: DeatailModel?
+    private var viewDetail: DetailView?
+    private var postModel: DetailModel?
 
     init(car: Car) {
-        self.postView = DetailView(frame: UIScreen.main.bounds)
-        self.postModel = DeatailModel(car: car)
+        self.viewDetail = DetailView(frame: UIScreen.main.bounds)
+        self.postModel = DetailModel(car: car)
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -24,20 +24,15 @@ class DetailViewController: UIViewController {
 
     override func loadView() {
         super.loadView()
-        self.postView?.loadView(controller: self)
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        guard let viewModel = postModel?.getData() else { return }
-        postView?.update(data: viewModel)
+        self.viewDetail?.loadView(controller: self, model: postModel!)
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        self.postView?.configView()
-        if let customView = postView {
+        self.viewDetail?.configView()
+        if let customView = viewDetail {
             self.view.addSubview(customView)
         }
+        viewDetail?.configView()
     }
 
 }

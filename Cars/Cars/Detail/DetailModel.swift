@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class DeatailModel {
+final class DetailModel {
 
     private var car: Car
     
